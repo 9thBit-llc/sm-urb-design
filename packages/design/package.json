@@ -7,6 +7,11 @@
     "access": "restricted"
   },
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9thBit-llc/sm-urb-design.git",
+    "directory": "packages/design"
+  },
   "type": "module",
   "sideEffects": [
     "**/*.css"
