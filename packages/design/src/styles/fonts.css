@@ -1,0 +1,9 @@
+/*
+	Self-hosted open-source fonts (OFL). Loaded once so both brands share the same files.
+	Themes choose which family each role uses through --typo-*--font-family and --sm-urb-font-*.
+*/
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource/silkscreen';

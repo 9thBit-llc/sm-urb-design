@@ -1,0 +1,67 @@
+/*
+	Shared base layer for both brands. Palette and brand-specific shape live in
+	urb.css and sm.css. Import order in a consuming app:
+
+		@import 'tailwindcss';
+		@import '@skeletonlabs/skeleton';
+		@import '@skeletonlabs/skeleton-svelte';
+		@import '@sm-urb/design/styles/fonts.css';
+		@import '@sm-urb/design/styles/base.css';
+		@import '@sm-urb/design/styles/urb.css';   (or sm.css)
+		@source '<design package>/src/lib';
+*/
+
+@layer base {
+	/* Headings use the theme's display face. Body text uses Skeleton's base typography. */
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--typo-heading--font-family);
+		font-weight: var(--typo-heading--font-weight);
+		letter-spacing: var(--typo-heading--letter-spacing);
+		line-height: 1.12;
+		text-wrap: balance;
+	}
+
+	h1 {
+		font-size: clamp(2.4rem, 5.5vw, 4.25rem);
+	}
+
+	h2 {
+		font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+	}
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+	/* A visible, brand-colored focus ring for every interactive element. Never remove focus. */
+	:focus-visible {
+		outline: 2px solid var(--color-tertiary-500);
+		outline-offset: 3px;
+	}
+
+	code,
+	pre,
+	kbd {
+		font-family: var(--sm-urb-font-mono);
+	}
+}
+
+@utility eyebrow {
+	font-family: var(--sm-urb-font-pixel);
+	font-size: 0.8rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-primary-700);
+
+	@variant dark {
+		color: var(--color-primary-300);
+	}
+}
+
+/* The lift is the brand's signature elevation: hard offset in URB, a hairline in SM. */
+@utility lift {
+	box-shadow: var(--sm-urb-shadow-lift);
+}

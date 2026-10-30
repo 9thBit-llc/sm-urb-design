@@ -1,0 +1,17 @@
+/*
+	Styleguide entry point. The order matters: Tailwind first, then Skeleton's
+	base and components, then the shared design layer, then both brand themes.
+	Both brand files are loaded so the toggle can switch without a reload.
+*/
+
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@sm-urb/design/styles/fonts.css';
+@import '@sm-urb/design/styles/base.css';
+@import '@sm-urb/design/styles/urb.css';
+@import '@sm-urb/design/styles/sm.css';
+
+/* Scan the design library and the Skeleton component package for utility classes. */
+@source '../../../packages/design/src/lib';
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
