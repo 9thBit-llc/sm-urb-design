@@ -8,6 +8,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { contrastRatio, fitChroma, relativeLuminance } from "./contrast.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = join(here, "..", "src", "styles");
@@ -20,32 +21,44 @@ const CHROMA_PROFILE = [0.12, 0.25, 0.5, 0.75, 0.92, 1, 0.92, 0.82, 0.66, 0.5, 0
 
 // Optional per-family lift. A highlight hue like chartreuse reads as olive at mid-lightness, so it sits lighter.
 function ramp(name, { hue, peak, lift = 0 }) {
-  const lines = SHADES.map((shade, i) => {
-    const l = Math.min(0.99, LIGHTNESS[i] + lift * (1 - LIGHTNESS[i]));
-    const c = (peak * CHROMA_PROFILE[i]).toFixed(3);
-    return `\t--color-${name}-${shade}: oklch(${l} ${c} ${hue});`;
+  return SHADES.map((shade, i) => {
+    // The lift fades out toward the dark end, so the deepest shades stay dark enough to carry text.
+    const weight = Math.min(1, Math.max(0, (LIGHTNESS[i] - 0.3) / 0.3));
+    const l = Math.min(0.99, LIGHTNESS[i] + lift * (1 - LIGHTNESS[i]) * weight);
+    const c = fitChroma(l, peak * CHROMA_PROFILE[i], hue);
+    return { name, shade, l, c, hue, css: `oklch(${l.toFixed(3)} ${c.toFixed(3)} ${hue})` };
   });
-  return lines;
 }
 
-// Skeleton's contrast rule: dark text on the light half of the ramp, light text on the dark half.
-function contrast(name) {
+// Text on each shade is whichever end of the ramp (50 or 950) measures higher against it.
+// Shades that cannot reach 4.5:1 are reported so the palette can be adjusted, not hidden.
+const WARNINGS = [];
+let currentTheme = "";
+function contrast(name, entries) {
+  const light = entries.find((e) => e.shade === 50);
+  const dark = entries.find((e) => e.shade === 950);
   const lines = [
     `\t--color-${name}-contrast-dark: var(--color-${name}-950);`,
     `\t--color-${name}-contrast-light: var(--color-${name}-50);`,
   ];
-  SHADES.forEach((shade, i) => {
-    const onLight = LIGHTNESS[i] > 0.6;
-    lines.push(`\t--color-${name}-contrast-${shade}: var(--color-${name}-contrast-${onLight ? "dark" : "light"});`);
-  });
+  for (const entry of entries) {
+    const onLight = contrastRatio(relativeLuminance(dark.l, dark.c, dark.hue), relativeLuminance(entry.l, entry.c, entry.hue));
+    const onDark = contrastRatio(relativeLuminance(light.l, light.c, light.hue), relativeLuminance(entry.l, entry.c, entry.hue));
+    const useDark = onLight >= onDark;
+    const best = Math.max(onLight, onDark);
+    if (best < 4.5) WARNINGS.push(`${currentTheme} ${name}-${entry.shade}: best text reaches ${best.toFixed(2)}:1 (needs 4.5)`);
+    lines.push(`\t--color-${name}-contrast-${entry.shade}: var(--color-${name}-contrast-${useDark ? "dark" : "light"});`);
+  }
   return lines;
 }
 
 function family(name, spec) {
-  return [`\t/* ${spec.label} */`, ...ramp(name, spec), ...contrast(name)];
+  const entries = ramp(name, spec);
+  return [`\t/* ${spec.label} */`, ...entries.map((e) => `\t--color-${name}-${e.shade}: ${e.css};`), ...contrast(name, entries)];
 }
 
 function themeBlock(theme) {
+  currentTheme = theme.id;
   const body = [
     ...family("primary", theme.primary),
     ...family("secondary", theme.secondary),
@@ -136,4 +149,9 @@ const themes = [
 
 for (const theme of themes) {
   writeFileSync(join(outDir, `${theme.id}.css`), themeBlock(theme));
+}
+
+if (WARNINGS.length) {
+  console.warn("Contrast warnings (text on a shade cannot reach 4.5:1):");
+  for (const warning of WARNINGS) console.warn(`  ${warning}`);
 }

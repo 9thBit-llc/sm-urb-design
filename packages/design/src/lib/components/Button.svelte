@@ -6,8 +6,8 @@
 
 	// Skeleton preset classes stay literal here so Tailwind generates them.
 	const variants: Record<Variant, string> = {
-		primary: 'btn preset-filled-primary-500 lift',
-		secondary: 'btn preset-filled-secondary-500 lift',
+		primary: 'btn preset-filled-primary-600 lift',
+		secondary: 'btn preset-filled-secondary-600 lift',
 		tertiary: 'btn preset-filled-tertiary-500 lift',
 		outline: 'btn preset-outlined-primary-500',
 		ghost: 'btn preset-tonal-primary'
