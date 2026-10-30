@@ -4,17 +4,17 @@
 
 [data-theme='urb'] {
 	/* Primary: Ur Brain violet */
-	--color-primary-50: oklch(0.975 0.026 292);
-	--color-primary-100: oklch(0.935 0.055 292);
-	--color-primary-200: oklch(0.88 0.110 292);
-	--color-primary-300: oklch(0.79 0.165 292);
-	--color-primary-400: oklch(0.67 0.202 292);
-	--color-primary-500: oklch(0.55 0.220 292);
-	--color-primary-600: oklch(0.47 0.202 292);
-	--color-primary-700: oklch(0.4 0.180 292);
-	--color-primary-800: oklch(0.33 0.145 292);
-	--color-primary-900: oklch(0.27 0.110 292);
-	--color-primary-950: oklch(0.2 0.075 292);
+	--color-primary-50: oklch(0.975 0.013 292);
+	--color-primary-100: oklch(0.935 0.034 292);
+	--color-primary-200: oklch(0.880 0.064 292);
+	--color-primary-300: oklch(0.790 0.116 292);
+	--color-primary-400: oklch(0.670 0.192 292);
+	--color-primary-500: oklch(0.550 0.220 292);
+	--color-primary-600: oklch(0.470 0.202 292);
+	--color-primary-700: oklch(0.400 0.180 292);
+	--color-primary-800: oklch(0.330 0.145 292);
+	--color-primary-900: oklch(0.270 0.110 292);
+	--color-primary-950: oklch(0.200 0.075 292);
 	--color-primary-contrast-dark: var(--color-primary-950);
 	--color-primary-contrast-light: var(--color-primary-50);
 	--color-primary-contrast-50: var(--color-primary-contrast-dark);
@@ -31,15 +31,15 @@
 	/* Secondary: teal, the complement to violet */
 	--color-secondary-50: oklch(0.975 0.013 185);
 	--color-secondary-100: oklch(0.935 0.028 185);
-	--color-secondary-200: oklch(0.88 0.055 185);
-	--color-secondary-300: oklch(0.79 0.083 185);
-	--color-secondary-400: oklch(0.67 0.101 185);
-	--color-secondary-500: oklch(0.55 0.110 185);
-	--color-secondary-600: oklch(0.47 0.101 185);
-	--color-secondary-700: oklch(0.4 0.090 185);
-	--color-secondary-800: oklch(0.33 0.073 185);
-	--color-secondary-900: oklch(0.27 0.055 185);
-	--color-secondary-950: oklch(0.2 0.037 185);
+	--color-secondary-200: oklch(0.880 0.055 185);
+	--color-secondary-300: oklch(0.790 0.083 185);
+	--color-secondary-400: oklch(0.670 0.101 185);
+	--color-secondary-500: oklch(0.550 0.097 185);
+	--color-secondary-600: oklch(0.470 0.083 185);
+	--color-secondary-700: oklch(0.400 0.070 185);
+	--color-secondary-800: oklch(0.330 0.058 185);
+	--color-secondary-900: oklch(0.270 0.048 185);
+	--color-secondary-950: oklch(0.200 0.035 185);
 	--color-secondary-contrast-dark: var(--color-secondary-950);
 	--color-secondary-contrast-light: var(--color-secondary-50);
 	--color-secondary-contrast-50: var(--color-secondary-contrast-dark);
@@ -54,17 +54,17 @@
 	--color-secondary-contrast-900: var(--color-secondary-contrast-light);
 	--color-secondary-contrast-950: var(--color-secondary-contrast-light);
 	/* Tertiary: chartreuse 'now' highlight */
-	--color-tertiary-50: oklch(0.98375 0.026 125);
-	--color-tertiary-100: oklch(0.95775 0.055 125);
+	--color-tertiary-50: oklch(0.984 0.026 125);
+	--color-tertiary-100: oklch(0.958 0.055 125);
 	--color-tertiary-200: oklch(0.922 0.110 125);
-	--color-tertiary-300: oklch(0.8635 0.165 125);
-	--color-tertiary-400: oklch(0.7855 0.202 125);
-	--color-tertiary-500: oklch(0.7075 0.220 125);
-	--color-tertiary-600: oklch(0.6555 0.202 125);
-	--color-tertiary-700: oklch(0.61 0.180 125);
-	--color-tertiary-800: oklch(0.5645 0.145 125);
-	--color-tertiary-900: oklch(0.5255000000000001 0.110 125);
-	--color-tertiary-950: oklch(0.48 0.075 125);
+	--color-tertiary-300: oklch(0.864 0.165 125);
+	--color-tertiary-400: oklch(0.785 0.197 125);
+	--color-tertiary-500: oklch(0.681 0.171 125);
+	--color-tertiary-600: oklch(0.575 0.145 125);
+	--color-tertiary-700: oklch(0.470 0.118 125);
+	--color-tertiary-800: oklch(0.353 0.089 125);
+	--color-tertiary-900: oklch(0.270 0.068 125);
+	--color-tertiary-950: oklch(0.200 0.050 125);
 	--color-tertiary-contrast-dark: var(--color-tertiary-950);
 	--color-tertiary-contrast-light: var(--color-tertiary-50);
 	--color-tertiary-contrast-50: var(--color-tertiary-contrast-dark);
@@ -72,8 +72,8 @@
 	--color-tertiary-contrast-200: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-300: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-400: var(--color-tertiary-contrast-dark);
-	--color-tertiary-contrast-500: var(--color-tertiary-contrast-light);
-	--color-tertiary-contrast-600: var(--color-tertiary-contrast-light);
+	--color-tertiary-contrast-500: var(--color-tertiary-contrast-dark);
+	--color-tertiary-contrast-600: var(--color-tertiary-contrast-dark);
 	--color-tertiary-contrast-700: var(--color-tertiary-contrast-light);
 	--color-tertiary-contrast-800: var(--color-tertiary-contrast-light);
 	--color-tertiary-contrast-900: var(--color-tertiary-contrast-light);
@@ -81,15 +81,15 @@
 	/* Surface: warm paper, shared by both brands */
 	--color-surface-50: oklch(0.975 0.002 85);
 	--color-surface-100: oklch(0.935 0.005 85);
-	--color-surface-200: oklch(0.88 0.010 85);
-	--color-surface-300: oklch(0.79 0.015 85);
-	--color-surface-400: oklch(0.67 0.018 85);
-	--color-surface-500: oklch(0.55 0.020 85);
-	--color-surface-600: oklch(0.47 0.018 85);
-	--color-surface-700: oklch(0.4 0.016 85);
-	--color-surface-800: oklch(0.33 0.013 85);
-	--color-surface-900: oklch(0.27 0.010 85);
-	--color-surface-950: oklch(0.2 0.007 85);
+	--color-surface-200: oklch(0.880 0.010 85);
+	--color-surface-300: oklch(0.790 0.015 85);
+	--color-surface-400: oklch(0.670 0.018 85);
+	--color-surface-500: oklch(0.550 0.020 85);
+	--color-surface-600: oklch(0.470 0.018 85);
+	--color-surface-700: oklch(0.400 0.016 85);
+	--color-surface-800: oklch(0.330 0.013 85);
+	--color-surface-900: oklch(0.270 0.010 85);
+	--color-surface-950: oklch(0.200 0.007 85);
 	--color-surface-contrast-dark: var(--color-surface-950);
 	--color-surface-contrast-light: var(--color-surface-50);
 	--color-surface-contrast-50: var(--color-surface-contrast-dark);
