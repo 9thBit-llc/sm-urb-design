@@ -3,7 +3,7 @@
 // Skeleton reads its palette from Tailwind `@theme` variables. A theme is a
 // `[data-theme='<name>']` block that overrides those variables, so each brand
 // is one block of tokens plus its color ramps. Edit the specs here and rerun
-// `pnpm --filter @sm-urb/design build:themes`; do not hand-edit the CSS.
+// `pnpm --filter @9thbit-llc/sm-urb-design build:themes`; do not hand-edit the CSS.
 
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";

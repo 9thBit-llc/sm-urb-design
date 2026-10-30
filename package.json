@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @sm-urb/design build",
+    "build": "pnpm --filter @9thbit-llc/sm-urb-design build",
     "dev": "pnpm --filter @sm-urb/styleguide dev",
     "build:styleguide": "pnpm build && pnpm --filter @sm-urb/styleguide build",
     "check": "pnpm build && pnpm --filter @sm-urb/styleguide check"

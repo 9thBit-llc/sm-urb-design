@@ -7,7 +7,7 @@
 		SiteFooter,
 		SiteHeader,
 		type BrandId
-	} from '@sm-urb/design';
+	} from '@9thbit-llc/sm-urb-design';
 
 	let { children } = $props();
 

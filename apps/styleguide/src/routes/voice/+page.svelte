@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { brands, Card, Section, voice, Stamp } from '@sm-urb/design';
+	import { brands, Card, Section, voice, Stamp } from '@9thbit-llc/sm-urb-design';
 
 	const lines = [
 		['Empty state', 'empty'],

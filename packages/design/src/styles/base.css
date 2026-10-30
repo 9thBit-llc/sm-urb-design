@@ -5,9 +5,9 @@
 		@import 'tailwindcss';
 		@import '@skeletonlabs/skeleton';
 		@import '@skeletonlabs/skeleton-svelte';
-		@import '@sm-urb/design/styles/fonts.css';
-		@import '@sm-urb/design/styles/base.css';
-		@import '@sm-urb/design/styles/urb.css';   (or sm.css)
+		@import '@9thbit-llc/sm-urb-design/styles/fonts.css';
+		@import '@9thbit-llc/sm-urb-design/styles/base.css';
+		@import '@9thbit-llc/sm-urb-design/styles/urb.css';   (or sm.css)
 		@source '<design package>/src/lib';
 */
 

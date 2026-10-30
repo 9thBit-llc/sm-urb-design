@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { brands, Button, Callout, Card, Eyebrow, Section, Stamp, Stat, voice } from '@sm-urb/design';
+	import { brands, Button, Callout, Card, Eyebrow, Section, Stamp, Stat, voice } from '@9thbit-llc/sm-urb-design';
 </script>
 
 <div class="flex flex-col gap-16">
@@ -53,7 +53,7 @@
 			<Stat label="Sites on it" value="0" hint="Adoption is the next step" />
 		</div>
 		<Callout tone="tip" title="Next step">
-			Wire <code>@sm-urb/design</code> into structuredmerge.org and ur-brain.tech, replacing their hand-written CSS one page at a time.
+			Wire <code>@9thbit-llc/sm-urb-design</code> into structuredmerge.org and ur-brain.tech, replacing their hand-written CSS one page at a time.
 		</Callout>
 	</Section>
 </div>

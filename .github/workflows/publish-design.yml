@@ -1,0 +1,59 @@
+name: Publish @9thbit-llc/sm-urb-design
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Set to true to run publish verification only"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    name: Publish design package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com
+
+      - name: Configure npm auth
+        run: |
+          test -n "$NODE_AUTH_TOKEN" || {
+            echo "Missing GH_PACKAGES_TOKEN in repository secrets." >&2
+            echo "Create GH_PACKAGES_TOKEN with package:write permission for github.com/9thBit-llc and retry." >&2
+            exit 1
+          }
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Build package
+        run: pnpm --filter @9thbit-llc/sm-urb-design build
+
+      - name: Dry run
+        if: inputs.dry_run == 'true'
+        working-directory: packages/design
+        run: pnpm publish --dry-run --ignore-scripts --no-git-checks
+
+      - name: Publish to GitHub Packages
+        if: inputs.dry_run != 'true'
+        working-directory: packages/design
+        run: pnpm publish --access restricted --ignore-scripts --no-git-checks

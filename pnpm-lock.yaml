@@ -10,7 +10,7 @@ importers:
 
   apps/styleguide:
     dependencies:
-      '@sm-urb/design':
+      '@9thbit-llc/sm-urb-design':
         specifier: workspace:*
         version: link:../../packages/design
     devDependencies:

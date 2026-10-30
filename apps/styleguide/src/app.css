@@ -7,10 +7,10 @@
 @import 'tailwindcss';
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton-svelte';
-@import '@sm-urb/design/styles/fonts.css';
-@import '@sm-urb/design/styles/base.css';
-@import '@sm-urb/design/styles/urb.css';
-@import '@sm-urb/design/styles/sm.css';
+@import '@9thbit-llc/sm-urb-design/styles/fonts.css';
+@import '@9thbit-llc/sm-urb-design/styles/base.css';
+@import '@9thbit-llc/sm-urb-design/styles/urb.css';
+@import '@9thbit-llc/sm-urb-design/styles/sm.css';
 
 /* Scan the design library and the Skeleton component package for utility classes. */
 @source '../../../packages/design/src/lib';

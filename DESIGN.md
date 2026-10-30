@@ -31,7 +31,7 @@ JetBrains Mono (code).
 
 ```
 sm-urb-design/
-  packages/design/        @sm-urb/design  tokens, themes, base layer, components
+  packages/design/        @9thbit-llc/sm-urb-design  tokens, themes, base layer, components
     scripts/generate-themes.mjs   source of truth for both brand palettes
     src/styles/fonts.css          shared font loading
     src/styles/base.css           shared typography, focus, eyebrow, lift
@@ -41,7 +41,7 @@ sm-urb-design/
   apps/styleguide/        @sm-urb/styleguide  living catalog and test bench
 ```
 
-Sites depend on `@sm-urb/design`. A site imports the shared styles in this order:
+Sites depend on `@9thbit-llc/sm-urb-design`. A site imports the shared styles in this order:
 Tailwind, Skeleton, `fonts.css`, `base.css`, then its brand theme. It then sets
 `data-theme` on `<html>` (`urb` or `sm`). No component knows its brand.
 
@@ -75,7 +75,7 @@ approval before anything ships publicly.
 
 ## Components
 
-Ours (`@sm-urb/design`): Button, Badge, Callout, Card, CodeBlock, Container,
+Ours (`@9thbit-llc/sm-urb-design`): Button, Badge, Callout, Card, CodeBlock, Container,
 Eyebrow, IngestDelta, MemoryCard, Section, SiteFooter, SiteHeader, Stamp, Stat,
 TextField, VersionTimeline, Wordmark.
 

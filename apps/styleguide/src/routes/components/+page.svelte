@@ -16,7 +16,7 @@
 		TextField,
 		VersionTimeline,
 		Wordmark
-	} from '@sm-urb/design';
+	} from '@9thbit-llc/sm-urb-design';
 
 	let email = $state('');
 	let emailError = $derived(email && !email.includes('@') ? 'Enter an address with an @ sign.' : undefined);

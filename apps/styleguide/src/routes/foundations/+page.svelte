@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRight, Brain, Clock, GitMerge, History, Search, Section, ShieldCheck, Sparkles } from '@sm-urb/design';
+	import { ArrowRight, Brain, Clock, GitMerge, History, Search, Section, ShieldCheck, Sparkles } from '@9thbit-llc/sm-urb-design';
 
 	const iconRow: { name: string; icon: typeof ArrowRight }[] = [
 		{ name: 'ArrowRight', icon: ArrowRight },
