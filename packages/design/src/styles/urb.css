@@ -127,6 +127,8 @@
 	--typo-heading--letter-spacing: -0.02em;
 
 	/* Brand-only tokens consumed by base.css */
+	--sm-urb-eyebrow-light: oklch(0.500 0.205 355);
+	--sm-urb-eyebrow-dark: oklch(0.660 0.260 355);
 	--sm-urb-font-pixel: "Silkscreen", ui-monospace, monospace;
 	--sm-urb-font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 	--sm-urb-shadow-lift: 5px 5px 0 0 var(--color-primary-900);

@@ -127,6 +127,8 @@
 	--typo-heading--letter-spacing: -0.03em;
 
 	/* Brand-only tokens consumed by base.css */
+	--sm-urb-eyebrow-light: var(--color-primary-700);
+	--sm-urb-eyebrow-dark: var(--color-primary-300);
 	--sm-urb-font-pixel: "JetBrains Mono Variable", ui-monospace, monospace;
 	--sm-urb-font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 	--sm-urb-shadow-lift: 0 1px 0 0 var(--color-surface-300);
