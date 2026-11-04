@@ -1,6 +1,6 @@
 {
   "name": "@9thbit-llc/sm-urb-design",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Shared design language for StructuredMerge and Ur Brain: tokens, themes, and Svelte components on Skeleton and Lucide.",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
@@ -34,7 +34,8 @@
     "build": "pnpm build:themes && svelte-package -i src/lib -o dist",
     "build:themes": "node scripts/generate-themes.mjs",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "prepack": "pnpm build"
+    "prepack": "pnpm build",
+    "test": "node --test test/*.test.ts"
   },
   "peerDependencies": {
     "@lucide/svelte": "^1.64.0",

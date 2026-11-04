@@ -64,6 +64,9 @@ function themeBlock(theme) {
     ...family("secondary", theme.secondary),
     ...family("tertiary", theme.tertiary),
     ...family("surface", theme.surface),
+    ...family("success", STATUS.success),
+    ...family("warning", STATUS.warning),
+    ...family("error", STATUS.error),
     "",
     "\t/* Brand accent (used by preset-filled-brand and the wordmark) */",
     "\t--color-brand-light: var(--color-primary-500);",
@@ -105,6 +108,14 @@ function themeBlock(theme) {
     "",
   ].join("\n");
 }
+
+// Status colors are shared by both brands. Without them Skeleton's success, warning and error
+// presets (Badge, Callout, billing states) render with no color.
+const STATUS = {
+  success: { label: "Success: green", hue: 150, peak: 0.15 },
+  warning: { label: "Warning: amber", hue: 80, peak: 0.15, lift: 0.2 },
+  error: { label: "Error: red", hue: 25, peak: 0.22 },
+};
 
 const SURFACE_PAPER = { label: "Surface: warm paper, shared by both brands", hue: 85, peak: 0.02 };
 
