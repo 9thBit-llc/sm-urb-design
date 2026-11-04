@@ -34,7 +34,8 @@
     "build": "pnpm build:themes && svelte-package -i src/lib -o dist",
     "build:themes": "node scripts/generate-themes.mjs",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "prepack": "pnpm build"
+    "prepack": "pnpm build",
+    "test": "node --test test/*.test.ts"
   },
   "peerDependencies": {
     "@lucide/svelte": "^1.64.0",

@@ -64,3 +64,13 @@
 @utility lift {
 	box-shadow: var(--sm-urb-shadow-lift);
 }
+
+/* Skeleton generates preset-filled-*-500 only. Button uses the 600 shade for text contrast, so define it here. */
+@utility preset-filled-primary-600 {
+	background-color: var(--color-primary-600);
+	color: var(--color-primary-contrast-600);
+}
+@utility preset-filled-secondary-600 {
+	background-color: var(--color-secondary-600);
+	color: var(--color-secondary-contrast-600);
+}
